@@ -1366,7 +1366,8 @@
             var opts = this.parent.prepareOpts.apply(this, arguments);
 
             opts = $.extend({}, {
-                closeOnSelect: true
+                closeOnSelect: true,
+                nativePlaceholder: false,
             }, opts);
 
             // TODO validate placeholder is a string if specified
@@ -1466,6 +1467,8 @@
                 this.clearPlaceholder();
             }));
 
+            if (this.opts.nativePlaceholder) this.search.attr('placeholder', this.getPlaceholder());
+
             // set the placeholder if necessary
             this.clearSearch();
         },
@@ -1515,7 +1518,7 @@
             var placeholder = this.getPlaceholder();
 
             if (placeholder !== undefined  && this.getVal().length === 0 && this.search.hasClass("select2-focused") === false) {
-                this.search.val(placeholder).addClass("select2-default");
+                if (!this.opts.nativePlaceholder) this.search.val(placeholder).addClass("select2-default");
                 // stretch the search box to full width of the container so as much of the placeholder is visible as possible
                 this.search.width(this.getContainerWidth());
             } else {
