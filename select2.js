@@ -1368,7 +1368,7 @@
 
             opts = $.extend({}, {
                 closeOnSelect: true,
-                nativePlaceholder: false,
+                nativePlaceholder: false
             }, opts);
 
             // TODO validate placeholder is a string if specified
