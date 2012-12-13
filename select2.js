@@ -1266,7 +1266,7 @@
                 // stretch the search box to full width of the container so as much of the placeholder is visible as possible
                 this.search.width(this.getContainerWidth());
             } else {
-                this.search.val("").width('auto');
+                this.search.val("").width(10);
             }
         },
 
@@ -1322,9 +1322,9 @@
 
             if (this.opts.closeOnSelect) {
                 this.close();
-                this.search.width('auto');
+                this.search.width(10);
             } else {
-                this.search.width('auto');
+                this.search.width(10);
                 this.resizeSearch();
             }
 
