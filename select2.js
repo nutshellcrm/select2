@@ -658,7 +658,8 @@ the specific language governing permissions and limitations under the Apache Lic
             this.opts.element
                 .data("select2", this)
                 .attr("tabindex", "-1")
-                .before(this.container);
+                .before(this.container)
+                .siblings('.select2-container-placeholder').remove();
             this.container.data("select2", this);
 
             this.dropdown = this.container.find(".select2-drop");
